@@ -1,0 +1,41 @@
+Steam/steamapps"
+
+echo "Checking paths..."
+
+# 1. Verify Windows path exists
+if [ ! -d "$WIN_STEAM_PATH" ]; then
+    echo "Error: Windows Steam folder not found at $WIN_STEAM_PATH"
+    echo "Please ensure your drive is mounted and the path is correct."
+    exit 1
+fi
+
+# 2. Create Linux Steam directory if it doesn't exist
+mkdir -p "$LINUX_STEAM_PATH"
+
+# 3. Handle the 'compatdata' issue
+# We MUST keep compatdata on the Linux drive to avoid NTFS naming errors
+echo "Setting up compatdata redirection..."
+if [ -d "$WIN_STEAM_PATH/compatdata" ]; then
+    echo "Backing up existing Windows compatdata..."
+    mv "$WIN_STEAM_PATH/compatdata" "$WIN_STEAM_PATH/compatdata.bak"
+fi
+
+# Create the symlink so Windows Steam uses the Linux folder for Proton files
+ln -sfn "$LINUX_STEAM_PATH/compatdata" "$WIN_STEAM_PATH/compatdata"
+
+# 4. Link the 'common' folder (where the actual game files live)
+echo "Linking game files (common folder)..."
+# Caution: This will point your Linux 'common' folder to your Windows 'common' folder.
+# If you have games already on Linux, move them first!
+if [ -d "$LINUX_STEAM_PATH/common" ] && [ ! -L "$LINUX_STEAM_PATH/common" ]; then
+    echo "Warning: Linux 'common' folder exists. Moving it to 'common.old'"
+    mv "$LINUX_STEAM_PATH/common" "$LINUX_STEAM_PATH/common.old"
+fi
+
+ln -sfn "$WIN_STEAM_PATH/common" "$LINUX_STEAM_PATH/common"
+
+# 5. Link the manifest files (The .acf files tell Steam the game is installed)
+echo "Linking app manifests..."
+ln -sfn "$WIN_STEAM_PATH"/*.acf "$LINUX_STEAM_PATH/" 2>/dev/null
+
+echo "Done! Restart Steam to see your games."
