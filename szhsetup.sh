@@ -5,4 +5,7 @@ git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-
 /tmp/pokemon-colorscripts/rinstall.sh
 rm -rf /tmp/pokemon-colorscripts
 
+apt-get eza
+
+echo "tamere"
 cp ./.zshrc "${HOME}"
