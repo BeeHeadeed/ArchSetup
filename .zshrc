@@ -83,12 +83,6 @@ function in {
     fi
 }
 
-if [[ ! -d "/opt/pokemon-colorscripts" ]]; then
-    git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
-    auto_sudo /tmp/pokemon-colorscripts/rinstall.sh
-    rm -rf /tmp/pokemon-colorscripts
-fi
-
 function print-pokemon {
     if [[ $(tput lines) -lt 40 ]]; then
         pokemon-colorscripts --no-title -r
