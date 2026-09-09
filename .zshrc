@@ -35,6 +35,15 @@ elif pacman -Qi paru &>/dev/null ; then
    aurhelper="paru"
 fi
 
+auto_sudo() {
+  # Usage: auto_sudo <command> [args...]
+  if [[ $EUID -eq 0 ]]; then
+    "$@"
+  else
+    sudo "$@"
+  fi
+}
+
 function in {
     local -a inPkg=("$@")
     local -a arch=()
@@ -76,7 +85,7 @@ function in {
 
 if [[ ! -d "/opt/pokemon-colorscripts" ]]; then
     git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
-    sudo /tmp/pokemon-colorscripts/rinstall.sh
+    auto_sudo /tmp/pokemon-colorscripts/rinstall.sh
     rm -rf /tmp/pokemon-colorscripts
 fi
 
