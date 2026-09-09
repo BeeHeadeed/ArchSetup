@@ -1,1 +1,1 @@
-cp ./.zshrc ~/
+cp ./.zshrc "${HOME}"

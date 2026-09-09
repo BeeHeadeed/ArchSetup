@@ -2,5 +2,5 @@
 cp .zshrc ~/
 
 # copy Hyde and Hypr config folders
-cp -r .config/Hyde ~/.config/
-cp -r .config/Hypr ~/.config/
+cp -r hyde ~/.config/
+cp -r hypr ~/.config/
