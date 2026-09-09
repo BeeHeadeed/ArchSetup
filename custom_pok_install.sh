@@ -2,9 +2,9 @@
 
 # A basic install script for pokemon-colorscripts
 
-INSTALL_DIR='/pok'
-BIN_DIR='/pok-bin'
-DIR_PATH= /tmp/pokemon-colorscripts
+INSTALL_DIR='~/pok'
+BIN_DIR='~/pok-bin'
+DIR_PATH= '/tmp/pokemon-colorscripts'
 
 export PATH="$BIN_DIR:$PATH"
 
