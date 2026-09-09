@@ -37,7 +37,7 @@ fi
 
 if [[ ! -d "/opt/pokemon-colorscripts" ]]; then
     git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
-    cd /tmp/pokemon-colorscripts/ && sudo ./rinstall.sh && cd -
+    sudo /tmp/pokemon-colorscripts/rinstall.sh
     rm -rf /tmp/pokemon-colorscripts
 fi
 
