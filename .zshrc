@@ -35,6 +35,45 @@ elif pacman -Qi paru &>/dev/null ; then
    aurhelper="paru"
 fi
 
+function in {
+    local -a inPkg=("$@")
+    local -a arch=()
+    local -a aur=()
+    local -a ubuntu=()
+
+    if command -v pacman &>/dev/null; then
+        for pkg in "${inPkg[@]}"; do
+            if pacman -Si "${pkg}" &>/dev/null ; then
+                arch+=("${pkg}")
+            else
+                aur+=("${pkg}")
+            fi
+        done
+
+        if [[ ${#arch[@]} -gt 0 ]]; then
+            sudo pacman -S --needed "${arch[@]}"
+        fi
+
+        if [[ ${#aur[@]} -gt 0 ]]; then
+            ${aurhelper} -S --needed "${aur[@]}"
+        fi
+    elif command -v apt-get &>/dev/null; then
+        for pkg in "${inPkg[@]}"; do
+            if apt-cache show "${pkg}" &>/dev/null; then
+                ubuntu+=("${pkg}")
+            else
+                echo "Package not found in Ubuntu repositories: ${pkg}" >&2
+            fi
+        done
+
+        if [[ ${#ubuntu[@]} -gt 0 ]]; then
+            sudo apt-get install -y "${ubuntu[@]}"
+        fi
+    else
+        echo "No supported package manager found (pacman or apt-get)." >&2
+    fi
+}
+
 if [[ ! -d "/opt/pokemon-colorscripts" ]]; then
     git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
     sudo /tmp/pokemon-colorscripts/rinstall.sh
