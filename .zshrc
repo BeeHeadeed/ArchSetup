@@ -35,28 +35,6 @@ elif pacman -Qi paru &>/dev/null ; then
    aurhelper="paru"
 fi
 
-function in {
-    local -a inPkg=("$@")
-    local -a arch=()
-    local -a aur=()
-
-    for pkg in "${inPkg[@]}"; do
-        if pacman -Si "${pkg}" &>/dev/null ; then
-            arch+=("${pkg}")
-        else
-            aur+=("${pkg}")
-        fi
-    done
-
-    if [[ ${#arch[@]} -gt 0 ]]; then
-        sudo pacman -S "${arch[@]}"
-    fi
-
-    if [[ ${#aur[@]} -gt 0 ]]; then
-        ${aurhelper} -S "${aur[@]}"
-    fi
-}
-
 if [[ ! -d "/opt/pokemon-colorscripts" ]]; then
     git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
     cd /tmp/pokemon-colorscripts/ && sudo ./rinstall.sh && cd -
