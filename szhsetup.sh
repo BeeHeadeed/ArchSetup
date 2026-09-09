@@ -1,7 +1,7 @@
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git ~/tmp/pokemon-colorscripts
 chmod 777 -R ~/tmp/
 ./custom_pok_install.sh
-rm -rf /tmp/pokemon-colorscripts
+rm -rf ~/tmp/pokemon-colorscripts
 
 apt-get eza
 
