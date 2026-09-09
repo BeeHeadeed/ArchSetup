@@ -1,7 +1,6 @@
 ./custom_pok_install.sh
 rm -rf ~/tmp/pokemon-colorscripts
+./install_eza.sh
 
-apt-get install eza
-
-cp ./.p10k.szh "${HOME}"
+cp ./.p10k.zsh "${HOME}"
 cp ./.zshrc "${HOME}"
