@@ -1,5 +1,5 @@
 ./custom_pok_install.sh
-rm -rf ~/tmp/pokemon-colorscripts
+rm -rf ~/pokemon-colorscripts
 
 cp ./utils.sh ~/
 ./install_eza.sh
@@ -9,7 +9,7 @@ set -e
 
 # Target user directory
 TARGET_HOME="${HOME}"
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_DIR="${HOME}/dotfiles"
 
 echo "Installing Zsh dotfiles for non-root user in ${TARGET_HOME}..."
 
