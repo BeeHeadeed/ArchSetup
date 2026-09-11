@@ -6,6 +6,8 @@ DIR_PATH="${HOME}/tmp/pokemon-colorscripts"
 
 # A basic install script for pokemon-colorscripts
 
+rm -rf $BIN_DIR
+rm -rf $DIR_PATH
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git $DIR_PATH
 mkdir $BIN_DIR
 chmod 777 -R ${HOME}/tmp/

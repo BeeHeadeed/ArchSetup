@@ -34,7 +34,7 @@ fi
 # 3. Restore custom plugins/themes
 if [ -d "${DOTFILES_DIR}/zsh/custom" ]; then
     mkdir -p "${TARGET_HOME}/.oh-my-zsh/custom"
-    cp -r "${DOTFILES_DIR}/zsh/custom/"* "${TARGET_HOME}/.oh-my-zsh/custom/" 2>/dev/null || true
+    cp -r "${DOTFILES_DIR}/oh-my-zsh/custom/"* "${TARGET_HOME}/.oh-my-zsh/custom/" 2>/dev/null || true
     echo "Restored custom plugins & themes"
 fi
 
