@@ -13,7 +13,7 @@ mkdir $BIN_DIR
 chmod 777 -R ${HOME}/tmp/
 
 # export PATH="$BIN_DIR:$PATH"
-export PATH="$BIN_DIR:$PATH"
+export PATH="$INSTALL_DIR:$PATH"
 
 # deleting directory if it already exists
 rm -rf "$INSTALL_DIR/pokemon-colorscripts" || return 1
