@@ -1,5 +1,5 @@
 ./custom_pok_install.sh
-rm -rf ~/pokemon-colorscripts
+rm -rf ${HOME}/pokemon-colorscripts
 
 cp ./utils.sh ~/
 ./install_eza.sh

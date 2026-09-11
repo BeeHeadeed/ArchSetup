@@ -1,14 +1,14 @@
 #!/bin/sh
 
-INSTALL_DIR='~/pok'
-BIN_DIR='~/pok-bin'
-DIR_PATH='~/pokemon-colorscripts'
+INSTALL_DIR="${HOME}/pok"
+BIN_DIR="${HOME}/pok-bin"
+DIR_PATH="${HOME}/tmp/pokemon-colorscripts"
 
 # A basic install script for pokemon-colorscripts
 
 git clone https://gitlab.com/phoneybadger/pokemon-colorscripts.git $DIR_PATH
 mkdir $BIN_DIR
-chmod 777 -R ~/tmp/
+chmod 777 -R ${HOME}/tmp/
 
 export PATH="$BIN_DIR:$PATH"
 
