@@ -3,6 +3,7 @@ rm -rf ${HOME}/pokemon-colorscripts
 
 cp ./utils.sh ~/
 ./install_eza.sh
+./install_python.sh
 
 #!/usr/bin/env bash
 set -e
