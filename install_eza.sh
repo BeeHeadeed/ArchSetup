@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_SCRIPTS_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-source "$ROOT_SCRIPTS_DIR/utils.sh"
-source "$ROOT_SCRIPTS_DIR/detect-os.sh"
+SCRIPT_DIR="${HOME}/dotfiles"
+source "${SCRIPT_DIR}/utils.sh"
+source "${SCRIPT_DIR}/detect-os.sh"
 
 PACKAGES=(git curl zsh fzf bat ripgrep)
 
