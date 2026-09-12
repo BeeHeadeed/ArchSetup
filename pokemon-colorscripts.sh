@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
 COLORSCRIPTS_DIR="${SCRIPT_DIR}/colorscripts"
 JSON_FILE="${SCRIPT_DIR}/pokemon.json"
 
