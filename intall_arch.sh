@@ -23,4 +23,19 @@ cd ~/HyDE/Scripts
 # adding windows to grub
 auto_sudo pacman -S os-prober
 
+read "Path to windows main partition: "MAIN_WIN_PART_PATH
+while [! -d $MAIN_WIN_PART_PATH]; then
+    read "Invalid path: " MAIN_WIN_PART_PATH
+fi;
 
+WIN_PATH=/mnt/windowsEFI
+if [! -d $WIN_PATH]; then
+    mkdir $WIN_PATH
+fi;
+
+sudo mount $MAIN_WIN_PART_PATH $WIN_PATH;
+cp -r $WIN_PATH/EFI/Microsoft /boot/EFI/
+if [ ! -f /boot/EFI/Boot/bootmgfw.efi]; then
+    echo "Windows boot file required but not found: /boot/EFI/bootmgfw.efi";
+    exit;
+fi;
