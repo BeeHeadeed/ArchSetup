@@ -1,4 +1,4 @@
-./custom_pok_install.sh
+./Dotfiles/custom_pok_install.sh
 
 cp ./Dotfiles/utils.sh ~/
 ./Dotfiles/install_eza.sh
