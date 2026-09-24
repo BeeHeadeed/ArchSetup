@@ -1,8 +1,8 @@
 ./custom_pok_install.sh
 
-cp ./utils.sh ~/
-./install_eza.sh
-./install_jq.sh
+cp ./Dotfiles/utils.sh ~/
+./Dotfiles/install_eza.sh
+./Dotfiles/install_jq.sh
 
 #!/usr/bin/env bash
 set -e
@@ -32,7 +32,7 @@ if [ -f "${DOTFILES_DIR}/zsh/.p10k.zsh" ]; then
 fi
 
 # 3. Restore custom plugins/themes
-if [ -d "${DOTFILES_DIR}/zsh/custom" ]; then
+if [ -d "${DOTFILES_DIR}/zsh/oh-my-zsh/custom" ]; then
     mkdir -p "${TARGET_HOME}/.oh-my-zsh/custom"
     cp -r "${DOTFILES_DIR}/oh-my-zsh/custom/"* "${TARGET_HOME}/.oh-my-zsh/custom/" 2>/dev/null || true
     echo "Restored custom plugins & themes"
@@ -52,5 +52,3 @@ fi
 
 echo "Dotfiles successfully installed!"
 
-cp ./.p10k.zsh "${HOME}"
-cp ./.zshrc "${HOME}"

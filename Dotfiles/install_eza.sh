@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="${HOME}/dotfiles"
+SCRIPT_DIR="${HOME}/dotfiles/Dotfiles"
 source "${SCRIPT_DIR}/utils.sh"
 source "${SCRIPT_DIR}/detect-os.sh"
 
