@@ -28,4 +28,4 @@ cp $DIR_PATH/pokemon.json $INSTALL_DIR/pokemon-colorscripts
 # create symlink in usr/bin
 rm -rf $BIN_DIR/pokemon-colorscripts || return 1
 mv ./Dotfiles/pokemon-colorscripts.sh $INSTALL_DIR/pokemon-colorscripts/
-ln -s $INSTALL_DIR/pokemon-colorscripts/pokemon-colorscripts.sh $INSTALL_DIR/pokemon-colorscripts
+ln -s $INSTALL_DIR/pokemon-colorscripts/pokemon-colorscripts.sh $INSTALL_DIR/pokemon-colorscripts/pokemon-colorscripts
