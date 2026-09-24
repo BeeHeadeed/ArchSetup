@@ -6,10 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-ZSH=~/dotfiles/oh-my-zsh/
+ZSH=~/dotfiles/Dotfiles/zsh/oh-my-zsh/
 
 # Path to powerlevel10k theme
-source ~/dotfiles/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source ~/dotfiles/Dotfiles/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # List of plugins used
 plugins=( git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting )
