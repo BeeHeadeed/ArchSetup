@@ -9,7 +9,7 @@ set -e
 
 # Target user directory
 TARGET_HOME="${HOME}"
-DOTFILES_DIR="${HOME}/dotfiles"
+DOTFILES_DIR="${HOME}/dotfiles/Dotfiles"
 
 echo "Installing Zsh dotfiles for non-root user in ${TARGET_HOME}..."
 
