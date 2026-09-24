@@ -60,7 +60,7 @@ show_pokemon_by_name() {
   local target_name="$1"
   local size_subdir="$SMALL_SUBDIR"
   local color_subdir="$REGULAR_SUBDIR"
-  
+
   [[ "${IS_LARGE}" == true ]] && size_subdir="$LARGE_SUBDIR"
   [[ "${SHINY}" == true ]] && color_subdir="$SHINY_SUBDIR"
 
@@ -76,7 +76,7 @@ show_pokemon_by_name() {
   if [[ -n "${FORM}" ]]; then
     local alternate_forms
     alternate_forms=$(jq -r --arg n "${target_name}" '.[] | select(.name == $n) | .forms[] | select(. != "regular")' "${JSON_FILE}")
-    
+
     if echo "${alternate_forms}" | grep -q "^${FORM}$"; then
       target_name="${target_name}-${FORM}"
     else
@@ -91,8 +91,8 @@ show_pokemon_by_name() {
     fi
   fi
 
-  local file_path="${COLORSCRIPTS_DIR}/${size_subdir}/${color_subdir}/${target_name}.ans"
-  
+  local file_path="${COLORSCRIPTS_DIR}/${size_subdir}/${color_subdir}/${target_name}"
+
   if [[ ! -f "${file_path}" ]]; then
     echo "Sprite file not found: ${file_path}" >&2
     exit 1
