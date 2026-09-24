@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="${HOME}/dotfiles"
+SCRIPT_DIR="${HOME}/dotfiles/Dotfiles"
 source "${SCRIPT_DIR}/utils.sh"
 source "${SCRIPT_DIR}/detect-os.sh"
 
@@ -43,7 +43,7 @@ install_jq() {
 
   TMP_DIR="$(mktemp -d)"
   curl -sSfL "${ASSET_URL}" -o "${TMP_DIR}/jq"
-  
+
   auto_sudo mv "${TMP_DIR}/jq" /usr/local/bin/jq
   auto_sudo chmod +x /usr/local/bin/jq
   rm -rf "${TMP_DIR}"
