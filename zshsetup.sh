@@ -1,15 +1,15 @@
-./Dotfiles/custom_pok_install.sh
+TARGET_HOME="${HOME}"
+DOTFILES_DIR="${HOME}/dotfiles/Dotfiles"
 
-cp ./Dotfiles/utils.sh ~/
-./Dotfiles/install_eza.sh
-./Dotfiles/install_jq.sh
+${DOTFILES_DIR}/custom_pok_install.sh
+
+cp ${DOTFILES_DIR}/utils.sh ~/
+${DOTFILES_DIR}/install_eza.sh
+${DOTFILES_DIR}/install_jq.sh
 
 #!/usr/bin/env bash
 set -e
 
-# Target user directory
-TARGET_HOME="${HOME}"
-DOTFILES_DIR="${HOME}/dotfiles/Dotfiles"
 
 echo "Installing Zsh dotfiles for non-root user in ${TARGET_HOME}..."
 
