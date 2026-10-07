@@ -1,0 +1,10 @@
+[
+  {
+    "output": ["eDP-1"],
+    "include": "/home/quentin/.local/share/waybar/layouts/personal/smallScreenConfig.jsonc"
+  },
+  {
+    "output": ["HDMI-A-1"],
+    "include": "/home/quentin/.local/share/waybar/layouts/personal/largeScreenConfig.jsonc"
+  }
+]

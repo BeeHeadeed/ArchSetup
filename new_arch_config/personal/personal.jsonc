@@ -1,0 +1,10 @@
+[
+  {
+    "output": ["$SMALLSCREEN"],
+    "include": "/home/quentin/.local/share/waybar/layouts/personal/smallScreenConfig.jsonc"
+  },
+  {
+    "output": ["$LARGESCREEN"],
+    "include": "/home/quentin/.local/share/waybar/layouts/personal/largeScreenConfig.jsonc"
+  }
+]
