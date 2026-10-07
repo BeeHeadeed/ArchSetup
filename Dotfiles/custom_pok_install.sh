@@ -23,7 +23,7 @@ cp $DIR_PATH/pokemon-colorscripts.py $INSTALL_DIR/pokemon-colorscripts
 cp $DIR_PATH/pokemon.json $INSTALL_DIR/pokemon-colorscripts
 
 # create symlink in usr/bin
-mv ${DOTFILES_DIR}/pokemon-colorscripts.sh $INSTALL_DIR/pokemon-colorscripts/
-ln -s $INSTALL_DIR/pokemon-colorscripts/pokemon-colorscripts.sh $INSTALL_DIR/pokemon-colorscripts/pokemon-colorscripts
+cp ${DOTFILES_DIR}/pokemon-colorscripts.sh ${INSTALL_DIR}/pokemon-colorscripts/
+ln -s ${INSTALL_DIR}/pokemon-colorscripts/pokemon-colorscripts.sh ${INSTALL_DIR}/pokemon-colorscripts/pokemon-colorscripts
 
 export PATH="$INSTALL_DIR/pokemon-colorscripts:$PATH"
