@@ -214,9 +214,9 @@ export PATH=$PATH:/home/quentin/.local/bin
 export PATH=$PATH:/home/node/pok/pokemon-colorscripts
 export PATH=$PATH:/home/quentin/Clone/android-studio/bin
 export PATH=$PATH:/opt/visual-studio-code/
-export ANDROID_HOME=/home/quentin/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/tools:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 

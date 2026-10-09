@@ -1,3 +1,5 @@
+#!/bin/sh
+
 TARGET_HOME="${HOME}"
 DOTFILES_DIR="${HOME}/dotfiles/Dotfiles"
 
@@ -9,7 +11,6 @@ ${DOTFILES_DIR}/install_jq.sh
 
 #!/usr/bin/env bash
 set -e
-
 
 echo "Installing Zsh dotfiles for non-root user in ${TARGET_HOME}..."
 
